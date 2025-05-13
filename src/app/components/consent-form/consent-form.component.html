@@ -1,0 +1,38 @@
+<div class="consent-form">
+    <h2>User Consent Form</h2>
+
+    <label>
+        Name:
+        <input [(ngModel)]="name" type="text" name="name" />
+    </label>
+
+    <label>
+        Email:
+        <input [(ngModel)]="email" type="email" name="email" />
+    </label>
+
+    <div class="checkbox-group">
+        <label>
+            <input type="checkbox" [(ngModel)]="consent.newsletter" name="newsletter" />
+            Receive newsletter
+        </label>
+
+        <label>
+            <input type="checkbox" [(ngModel)]="consent.targetedAds" name="targetedAds" />
+            Be shown targeted ads
+        </label>
+
+        <label>
+            <input type="checkbox" [(ngModel)]="consent.statistics" name="statistics" />
+            Contribute to anonymous visit statistics
+        </label>
+    </div>
+
+    <div *ngIf="errorMessage" class="errorMessage">
+        {{ errorMessage }}
+    </div>
+
+    <div class="form-action">
+        <button id="submit-btn" (click)="giveConsent()">Give Consent</button>
+    </div>
+</div>

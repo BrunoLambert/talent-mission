@@ -1,0 +1,19 @@
+<div id="consent-list">
+    <h2>Consents Received</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Consents</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let entry of consents">
+                <td>{{ entry.name }}</td>
+                <td>{{ entry.email }}</td>
+                <td>{{ formatConsent(entry.consent) }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
